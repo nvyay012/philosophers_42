@@ -6,5 +6,6 @@ int	main(int ac, char** av) {
 		return (1);
 	if (input_checker(av))
 		return (1);
-
+	if (init(&data, argv, argc))
+                return (1);
 }
