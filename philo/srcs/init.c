@@ -13,7 +13,7 @@ int	init_data(t_data* data, int ac, char** av)
 	if (data->philo_num <= 0 || data->philo_num >= 200 || data->eat_time == 0
 		|| data->sleep_time == 0 || data->death_time == 0)
 	{
-		return (ft_error(ERR_IN_2, NULL));
+		return (ft_error(ERR_IN_2, NULL));	
 	}
 	data->dead = 0;
 	data->finished = 0;
@@ -26,13 +26,13 @@ int	alloc(t_data* data)
 {
 	data->tid = malloc(sizeof(pthread_t) * data->philo_num);
 	if (!data->tid)
-		return (error(ALLOC_ERR_1, data));
+		return (ft_error(ALLOC_ERR_1, data));
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->philo_num);
 	if (!data->forks)
-		return (error(ALLOC_ERR_2, data));
+		return (ft_error(ALLOC_ERR_2, data));
 	data->philos = malloc(sizeof(t_philo) * data->philo_num);
 	if (!data->philos)
-		return (error(ALLOC_ERR_3, data));
+		return (ft_error(ALLOC_ERR_3, data));
 	return (0);
 }
 

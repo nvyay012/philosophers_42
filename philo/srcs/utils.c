@@ -3,6 +3,7 @@
 int	input_checker(char** av)
 {
 	int	i;
+	int	j;
 
 	i = 1;
 	while (av[i])
@@ -54,6 +55,6 @@ void	clear_data(t_data* data)
 		free(data->tid);
 	if (data->forks)
 		free(data->forks);
-	if (data->philo)
+	if (data->philos)
 		free(data->philos);
 }

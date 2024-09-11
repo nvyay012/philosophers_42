@@ -1,3 +1,5 @@
+#pragma pack(1)
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -10,19 +12,20 @@
 # include <limits.h>
 # include <pthread.h>
 # include <stdint.h>
+# include <pthread.h>
 
-//  alloc_err
-# define ALLOC_ERR_THREADS "ERROR WHILE ALLOCATING THREADS IDs"
-# define ALLOC_ERR_PHILOS "ERROR WHILE ALLOCATING PHILOS"
-# define ALLOC_ERR_FORKS "ERROR WHILE ALLOCATING FORKS"
-//	input_err
+
+# define ALLOC_ERR_1 "ERROR WHILE ALLOCATING THREADS IDs"
+# define ALLOC_ERR_2 "ERROR WHILE ALLOCATING PHILOS"
+# define ALLOC_ERR_3 "ERROR WHILE ALLOCATING FORKS"
+
 # define ERR_IN_1 "INVALID INPUT CHARACTER"
 # define ERR_IN_2 "INVALID INPUT VALUES"
-//	pthread_err
+
 # define TH_ERR "ERROR WHILE CREATING THREADS"
 # define JOIN_ERR "ERROR WHILE JOINING THREADS"
 # define INIT_ERR_1 "ERROR WHILE INIT FORKS"
-//	time_err
+
 # define TIME_ERR "UNABLE TO RETRIVE UTC"
 
 # define FORK "has taking a fork"
@@ -66,13 +69,14 @@ typedef struct s_data
 }	t_data;
 
 
-int			ft_atoi(char* str);
+int			ft_atoi(const char* str);
 int			input_checker(char** av);
 int			ft_error(char* str, t_data *data);
 void		ft_exit(t_data* data);
 int			init_data(t_data* data, int ac, char** av);
 int			init(t_data* data, int ac, char** av);
 int			alloc(t_data* data);
+void		clear_data(t_data* data);
 int			init_forks(t_data* data);
 
 #endif

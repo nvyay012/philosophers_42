@@ -2,10 +2,13 @@
 
 
 int	main(int ac, char** av) {
+	t_data data;
 	if (ac < 5 || ac > 6)
-		return (1);
+		return (EXIT_FAILURE);
 	if (input_checker(av))
-		return (1);
-	if (init(&data, argv, argc))
-                return (1);
+		return (EXIT_FAILURE);
+	if (init(&data, ac, av))
+		return (EXIT_FAILURE);
+
+	return (EXIT_SUCCESS);
 }
