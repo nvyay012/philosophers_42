@@ -1,5 +1,3 @@
-#pragma pack(1)
-
 #ifndef PHILO_H
 # define PHILO_H
 
